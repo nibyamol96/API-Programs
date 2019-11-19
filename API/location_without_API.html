@@ -1,0 +1,22 @@
+<html>
+<body>
+ <button onclick="getLocation()">click</button>
+ <div id="demo"></div>
+ <script>
+var x = document.getElementById("demo");
+function getLocation() {
+ if (navigator.geolocation) {//The navigator object contains information about the browser.
+                           //Returns a Geolocation object that can be used to locate the user's position
+   navigator.geolocation.getCurrentPosition(showPosition);//method is used to return the user's position.
+                              //getcurentposition method is used to get the current position of the device.
+ } else {
+   x.innerHTML = "Geolocation is not supported by this browser.";
+ }
+}
+function showPosition(position) {
+ x.innerHTML = "Latitude: " + position.coords.latitude +
+ "<br>Longitude: " + position.coords.longitude;
+}
+</script>
+ </body>
+ </html>
